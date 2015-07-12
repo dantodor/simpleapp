@@ -1,0 +1,26 @@
+<configuration>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+         <file>./tester.log</file>
+         <append>true</append>
+         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>./tester-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+                <timeBasedFileNamingAndTriggeringPolicy
+                       class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                       <!-- or whenever the file size reaches 50MB -->
+                       <maxFileSize>50MB</maxFileSize>
+                </timeBasedFileNamingAndTriggeringPolicy>
+                <maxHistory>10</maxHistory>
+         </rollingPolicy>
+        <encoder>
+            <pattern>%date{ISO8601} %-5level %logger{36} %X{sourceThread} - %msg%n</pattern>
+        </encoder>
+
+     </appender>
+
+    <root level="INFO">
+   <!--     <appender-ref ref="STASH" /> -->
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
+

@@ -1,0 +1,26 @@
+
+
+
+curl -H "Content-Type: application/json" -X POST -d '{"symbol":"CC","stockType":"PREFFERED","lastDividend":50,"fixedDividend":0.2,"parValue":100}' http://localhost:4567/api/v1/newstock
+curl http://localhost:4567/api/v1/getstocklist
+curl http://localhost:4567/api/v1/getstockinfo/CC
+curl -H "Content-Type: application/json" -X POST -d '{"symbol":"CC","transactionType":"BUY","amount":50,"price":0.25}' http://localhost:4567/api/v1/newtransaction
+curl -H "Content-Type: application/json" -X POST -d '{"symbol":"CC","transactionType":"SELL","amount":150,"price":0.27}' http://localhost:4567/api/v1/newtransaction
+curl -H "Content-Type: application/json" -X POST -d '{"symbol":"CC","transactionType":"BUY","amount":75,"price":0.24}' http://localhost:4567/api/v1/newtransaction
+curl http://localhost:4567/api/v1/getstockinfo/CC
+curl http://localhost:4567/api/v1/gettransactionlist/CC
+curl http://localhost:4567/api/v1/getmarketindex
+curl -H "Content-Type: application/json" -X POST -d '{"symbol":"CA","stockType":"COMMON","lastDividend":150,"fixedDividend":0.1,"parValue":150}' http://localhost:4567/api/v1/newstock
+curl http://localhost:4567/api/v1/getstocklist
+curl http://localhost:4567/api/v1/getstockinfo/CA
+curl -H "Content-Type: application/json" -X POST -d '{"symbol":"CA","transactionType":"BUY","amount":50,"price":0.35}' http://localhost:4567/api/v1/newtransaction
+curl -H "Content-Type: application/json" -X POST -d '{"symbol":"CA","transactionType":"SELL","amount":250,"price":0.53}' http://localhost:4567/api/v1/newtransaction
+curl -H "Content-Type: application/json" -X POST -d '{"symbol":"CA","transactionType":"BUY","amount":150,"price":0.4}' http://localhost:4567/api/v1/newtransaction
+curl http://localhost:4567/api/v1/getstockinfo/CA
+curl http://localhost:4567/api/v1/gettransactionlist/CA
+curl http://localhost:4567/api/v1/getmarketindex
+
+
+
+
+
